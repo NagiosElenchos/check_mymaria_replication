@@ -1,7 +1,7 @@
 Élenchos: Check MySQL and MariaDB Replication
 =============================================
 
-A Élenchos for checking the replication of a MySQL and MariaDB instance.
+A Élenchos command for checking the replication of a MySQL and MariaDB instance.
 
 License
 =======
