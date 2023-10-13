@@ -4,5 +4,6 @@
 /build/
 /composer.lock
 /dist/
+/elenchos_check_mymaria_replication.egg-info/
 /vendor/
 /venv/
