@@ -46,4 +46,6 @@ setup(
 
         install_requires=['cleo~=2.0.0',
                           'lxml~=4.9.3'],
+
+        package_data={'': ['commands.xml']},
 )
