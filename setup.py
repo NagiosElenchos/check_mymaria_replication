@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-        name='Elenchos',
+        name='elenchos-check-mymaria-replication',
 
         version='0.0.0',
 
@@ -46,10 +46,4 @@ setup(
 
         install_requires=['cleo~=2.0.0',
                           'lxml~=4.9.3'],
-
-        entry_points={
-            'console_scripts': [
-                'elenchos = elenchos:main',
-            ],
-        }
 )
