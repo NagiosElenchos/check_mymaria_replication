@@ -40,7 +40,7 @@
     <!-- Uploads a distribution to PyPI -->
     <target name="upload">
         <loadfile property="VERSION" file=".version"/>
-        <exec command="twine upload dist/Elenchos-${VERSION}.tar.gz" passthru="true" checkreturn="true"/>
+        <exec command="twine upload dist/elenchos-check-mymaria-replication-${VERSION}.tar.gz" passthru="true" checkreturn="true"/>
     </target>
 
     <!-- All steps for releasing a new version -->
