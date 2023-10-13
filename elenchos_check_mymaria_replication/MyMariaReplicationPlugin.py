@@ -12,7 +12,7 @@ from elenchos_check_mymaria_replication.DataLayer import DataLayer
 
 class MyMariaReplicationPlugin(NagiosPlugin):
     """
-
+    Élenchos plugin for checking the replication of a MySQL or MariaDB instance.
     """
 
     # ------------------------------------------------------------------------------------------------------------------
