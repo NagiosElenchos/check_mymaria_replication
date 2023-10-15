@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
         name='elenchos-check-mymaria-replication',
 
-        version='0.0.1',
+        version='1.0.0',
 
         description='Élenchos: Check MySQL and MariaDB Replication',
         long_description=long_description,
