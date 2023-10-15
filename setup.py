@@ -1,7 +1,7 @@
 from codecs import open
 from os import path
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 here = path.abspath(path.dirname(__file__))
 
@@ -44,8 +44,8 @@ setup(
 
         packages=find_packages(exclude=['build', 'test']),
 
-        install_requires=['cleo~=2.0.0',
-                          'lxml~=4.9.3'],
+        install_requires=['elenchos~=1.0.0',
+                          'mysql-connector-python~=8.1.0'],
 
         package_data={'': ['commands.xml']},
 )
