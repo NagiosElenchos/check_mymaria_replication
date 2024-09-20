@@ -103,7 +103,7 @@ class MyMariaReplicationPlugin(NagiosPlugin):
     # ------------------------------------------------------------------------------------------------------------------
     def __check_slave_io(self, slave_status: Dict) -> None:
         """
-        Checks whether slave IO is running and adds performance data.
+        Checks whether IO thread is running and adds performance data.
         """
         value = 1 if slave_status['Slave_IO_Running'] == 'Yes' else 0
 
@@ -117,7 +117,7 @@ class MyMariaReplicationPlugin(NagiosPlugin):
     # ------------------------------------------------------------------------------------------------------------------
     def __check_slave_sql_running(self, slave_status: Dict) -> None:
         """
-        Adds performance data about slave SQL running.
+        Adds performance data about SQL thread is running.
         """
         value = 1 if slave_status['Slave_SQL_Running'] == 'Yes' else 0
 
@@ -128,6 +128,7 @@ class MyMariaReplicationPlugin(NagiosPlugin):
     # ------------------------------------------------------------------------------------------------------------------
     def _self_check(self) -> NagiosStatus:
         """
+        Checks the replication status.
         """
         slave_status = self.__dl.slave_status()
         last_heartbeat = self.__dl.last_heartbeat()
