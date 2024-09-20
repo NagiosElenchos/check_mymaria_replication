@@ -49,11 +49,13 @@ class CheckMyMariaReplicationCommand(CheckCommand):
                 },
             'database':
                 {
-                    'host':     self.__get_option_str(config, 'database', 'host', fallback='localhost'),
-                    'user':     self.__get_option_str(config, 'database', 'user'),
-                    'password': self.__get_option_str(config, 'database', 'password'),
-                    'database': self.__get_option_str(config, 'database', 'database'),
-                    'port':     self.__get_option_int(config, 'database', 'port', fallback=3306)
+                    'host':      self.__get_option_str(config, 'database', 'host', fallback='localhost'),
+                    'user':      self.__get_option_str(config, 'database', 'user'),
+                    'password':  self.__get_option_str(config, 'database', 'password'),
+                    'database':  self.__get_option_str(config, 'database', 'database'),
+                    'port':      self.__get_option_int(config, 'database', 'port', fallback=3306),
+                    'charset':   self.__get_option_str(config, 'database', 'charset', fallback='utf8mb4'),
+                    'collation': self.__get_option_str(config, 'database', 'collation', fallback='utf8mb4_general_ci')
                 }}
 
         return params

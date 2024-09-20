@@ -63,18 +63,22 @@ critical       = 20000
 timestamp_path = timestamp.txt
 
 [database]
+host       = localhost
+database   = heartbeat
+port       = 3306
+charset    = utf8mb4
+collation  = utf8mb4_general_ci
 supplement = credentials.cfg
 ```
+
+The values of `host`, `port`, `charset`, and `collation` in the `database` section are the defaults and can be omitted.
 
 Create the file `/etc/nagios/credentials.cfg` for storing the credentials of the replication monitoring user:
 
 ```ini
 [database]
-host     = localhost
-port     = 3306
 user     = rep_monitor
 password = secret
-database = heartbeat
 ```
 
 Set the proper mode and ownership of `/etc/nagios/credentials.cfg` by executing the following commands.
