@@ -18,6 +18,9 @@ create table heartbeat
   heartbeat datetime not null
 ) engine = InnoDB;
 
+insert into heartbeat(heartbeat)
+values (now());
+
 create definer=root@localhost event heartbeat
 on schedule every 1 minute starts '2016-02-07 09:22:34'
 on completion preserve enable
@@ -67,9 +70,9 @@ Create the file `/etc/nagios/credentials.cfg` for storing the credentials of the
 
 ```ini
 [database]
-host = localhost
-port = 3306
-user = rep_monitor
+host     = localhost
+port     = 3306
+user     = rep_monitor
 password = secret
 database = heartbeat
 ```
