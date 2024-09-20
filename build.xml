@@ -54,18 +54,32 @@
                              haltOnError="true"/>
         <reflexive>
             <fileset dir=".">
-                <include name="setup.py"/>
+                <include name="pyproject.toml"/>
             </fileset>
             <filterchain>
                 <replaceregexp>
-                    <regexp pattern="version=.*" replace="version='${VERSION}',"/>
+                    <regexp pattern="version = .*" replace="version = &quot;${VERSION}&quot;"/>
                 </replaceregexp>
             </filterchain>
         </reflexive>
-        <gitcommit repository="." message="Release: ${VERSION}" allFiles="true"/>
-        <gitpush repository="."/>
-        <gittag repository="." name="${VERSION}"/>
-        <gitpush repository="." refspec="${VERSION}" quiet="false"/>
+        <exec executable="git" checkreturn="true" passthru="true">
+            <arg value="commit"/>
+            <arg value="-a"/>
+            <arg value="-m"/>
+            <arg value="Release: ${VERSION}"/>
+        </exec>
+        <exec executable="git" checkreturn="true" passthru="true">
+            <arg value="push"/>
+        </exec>
+        <exec executable="git" checkreturn="true" passthru="true">
+            <arg value="tag"/>
+            <arg value="${VERSION}"/>
+        </exec>
+        <exec executable="git" checkreturn="true" passthru="true">
+            <arg value="push"/>
+            <arg value="origin"/>
+            <arg value="${VERSION}"/>
+        </exec>
     </target>
 
     <!-- Creates a new distribution using pyproject.toml -->
