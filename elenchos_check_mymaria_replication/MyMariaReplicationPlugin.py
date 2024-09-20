@@ -1,4 +1,4 @@
-from datetime import datetime
+import time
 from pathlib import Path
 from typing import Dict
 
@@ -46,7 +46,7 @@ class MyMariaReplicationPlugin(NagiosPlugin):
         """
         Checks whether there is no last SQL error and adds performance data.
         """
-        now = int((datetime.utcnow() - datetime(1970, 1, 1)).total_seconds())
+        now = int(time.time())
         lag = now - last_heartbeat
 
         if lag <= self.__params['nagios']['max_lag']:
@@ -72,7 +72,7 @@ class MyMariaReplicationPlugin(NagiosPlugin):
         """
         Checks whether there is no last SQL error and adds performance data.
         """
-        value = int((datetime.utcnow() - datetime(1970, 1, 1)).total_seconds() - last_heartbeat)
+        value = int(time.time()) - last_heartbeat
 
         self._add_performance_data(PerformanceData('Last Heartbeat', value=value, type_check='asc', unit='s'))
 
