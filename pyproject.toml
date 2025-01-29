@@ -21,8 +21,8 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.10.0"
-elenchos = "^1.0.0"
-mysql-connector-python = "^9.0.0"
+elenchos = "^1.1.0"
+mysql-connector-python = "^9.2.0"
 
 [build-system]
 requires = ["poetry-core"]
