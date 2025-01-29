@@ -69,10 +69,10 @@ class CheckMyMariaReplicationCommand(CheckCommand):
         """
         Reads an option for a configuration file.
 
-        :param ConfigParser config: The main config file.
-        :param str section: The name of the section op the option.
-        :param str option: The name of the option.
-        :param str|None fallback: The fallback value of the option if it is not set in either configuration files.
+        :param config: The main config file.
+        :param section: The name of the section op the option.
+        :param option: The name of the option.
+        :param fallback: The fallback value of the option if it is not set in either configuration files.
 
         :raise KeyError:
         """
@@ -92,10 +92,10 @@ class CheckMyMariaReplicationCommand(CheckCommand):
         """
         Reads an option for a configuration file.
 
-        :param ConfigParser config: The main config file.
-        :param str section: The name of the section op the option.
-        :param str option: The name of the option.
-        :param str|None fallback: The fallback value of the option if it is not set in either configuration files.
+        :param config: The main config file.
+        :param section: The name of the section op the option.
+        :param option: The name of the option.
+        :param fallback: The fallback value of the option if it is not set in either configuration files.
 
         :raise KeyError:
         """
