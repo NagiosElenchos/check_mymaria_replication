@@ -1,11 +1,10 @@
 <project name="Élenchos" default="build" basedir=".">
-    <taskdef name="readSemanticVersion" classname="vendor.setbased.phing-extensions.src.Task.ReadSemanticVersionTask"/>
+    <taskdef name="readSemanticVersion" classname="\SetBased\Phing\Task\ReadSemanticVersionTask"/>
     <property name="BUILD_DIR" value="./build"/>
 
     <!-- Run composer update and executes various other updates -->
     <target name="composer-update">
         <exec executable="composer" checkreturn="true" passthru="true">
-            <arg value="--ansi"/>
             <arg value="update"/>
         </exec>
     </target>
