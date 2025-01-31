@@ -48,7 +48,7 @@ mkdir bin
 ln -s ../.venv/bin/elenchos bin/elenchos
 
 . .venv/bin/activate
-pip install elenchos-check-mymaria-replication
+pip install elenchos_check_mymaria_replication
 /opt/elenchos/bin/elenchos gather-commands
 ```
 
